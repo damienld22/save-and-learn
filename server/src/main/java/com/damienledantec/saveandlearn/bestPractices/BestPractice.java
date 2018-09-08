@@ -1,11 +1,7 @@
 package com.damienledantec.saveandlearn.bestPractices;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.lang.Nullable;
-
-import lombok.Data;
 import utils.Category;
-
 
 public class BestPractice {
 	
@@ -14,6 +10,7 @@ public class BestPractice {
 	private String title;
 	private String content;
 	private Category category;
+	
 	public String getTitle() {
 		return title;
 	}

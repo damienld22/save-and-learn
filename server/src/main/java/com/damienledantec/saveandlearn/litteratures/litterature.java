@@ -1,20 +1,39 @@
 package com.damienledantec.saveandlearn.litteratures;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.lang.Nullable;
-
-import lombok.Data;
 import utils.Category;
 
-@Data
 public class litterature {
 	
 	@Id private String id;
 	
 	private String title;
-	@Nullable
 	private String description;
 	private String link;
-	@Nullable
-	private Category category;	
+	private Category category;
+	
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getLink() {
+		return link;
+	}
+	public void setLink(String link) {
+		this.link = link;
+	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}	
 }

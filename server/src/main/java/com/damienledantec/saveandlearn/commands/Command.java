@@ -1,19 +1,32 @@
 package com.damienledantec.saveandlearn.commands;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.lang.Nullable;
-
-import lombok.Data;
 import utils.Category;
 
-@Data
 public class Command {
 
 	@Id private String id;
 	
 	private String command;
-	@Nullable
 	private String description;
-	@Nullable
 	private Category category;
+	
+	public String getCommand() {
+		return command;
+	}
+	public void setCommand(String command) {
+		this.command = command;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 }
