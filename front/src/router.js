@@ -8,10 +8,6 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
-      redirect: { name: 'best-practices' }
-    },
-    {
       path: '/best-practices',
       name: 'bestPractices',
       component: BestPractices
@@ -20,6 +16,10 @@ export default new Router({
       path: '/libraries',
       name: 'libraries',
       component: Libraries
+    },
+    {
+      path: '/',
+      redirect: { name: 'bestPractices' }
     }
   ]
 })

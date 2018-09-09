@@ -36,15 +36,28 @@
 </template>
 
 <script>
+import axios from 'axios'
+import { URL_SERVER_BEST_PRACTICES } from '../utils/network'
+
 export default {
   name: 'BestPractices',
   data: () => {
     return {
-      bestPractices: [
-        { id: 1, title: 'My first practice', content: 'This is awesome' },
-        { id: 2, title: 'My second practice', content: 'Ok it\'s good' },
-        { id: 3, title: 'My third practice', content: 'Ok it\'s again so good' }
-      ]
+      bestPractices: null
+    }
+  },
+  created: function () {
+    this.init()
+  },
+  methods: {
+    init: function () {
+      const url = URL_SERVER_BEST_PRACTICES
+      axios.get(url).then((result) => {
+        this.bestPractices = result.data['_embedded']['best-practice']
+      }).catch((err) => {
+        // TODO: Handle error
+        console.error(err)
+      })
     }
   }
 }
